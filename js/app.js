@@ -17,8 +17,8 @@ window.onload=function()
     {
         load_from_api(get_selection_value(evt.target.value));
     }
-    let refresh=document.getElementById("refresh");
-    refresh.onclick=function(evt)
+    let refresh_btn=document.getElementById("refresh");
+    refresh_btn.onclick=function(evt)
     {
         refresh();
     }
