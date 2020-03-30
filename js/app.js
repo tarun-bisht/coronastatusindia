@@ -155,6 +155,12 @@ function load_from_api(value)
         });
     });
 }
+function clear_table()
+{
+    document.getElementById("table-body").innerHTML="";
+}
+
+
 function refresh()
 {
     fetch(`${url}/scapre-it`).then(function(response)
