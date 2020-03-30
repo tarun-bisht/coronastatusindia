@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Corona Virus Status In India | </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=yes">
+    <meta name="description" content="Get Current status of Corona virus in India in json format.
+    created by scraping from ministry of health and family welfare https://www.mohfw.gov.in , Corona Virus Status API for India">
+    <meta name="keyword" content="Corona Virus Json API, Corona Virus Status API, Corona Virus status India">
+    <meta name="author" content="Tarun Bisht">
+    <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link defer rel="stylesheet" href="css/app.css">
+    <link defer rel="stylesheet" href="css/loader.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script defer src="js/app.js" charset="utf-8"></script>
+    <link async href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link async rel="icon" href="favicon.ico">
+  </head>
+  <body>
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <div class="container">
+      <h6>Model is Loading.... It might take sometime</h6>
+      <p>That's where you need to be patient and persevere and see where things lead.</p>
+    </div><div class="lds-css ng-scope" style="width: 200px; height: 200px;"><div style="width:100%;height:100%" class="lds-facebook"><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <!-- Loader Ends -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">Corona Virus Status India</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="https://tarunbisht.com">Website</a>
+                </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container main">
+          <div class="mb-5">
+              <div class="mb-5" >
+                <button class="btn-success" id="refresh">Refresh Data Now!</button>
+              </div>
+              <select class="mb-5"  id="get_selection">
+                  <option value="tc">Total Confirm Cases</option>
+                  <!-- <option value="tci">Total Confirm Cases (Indians)</option>
+                  <option value="tcf">Total Confirm Cases (Foreign)</option> -->
+                  <option value="tcc">Total Confirm Cured Cases</option>
+                  <option value="tcd">Total Confirm Death Cases</option>
+              </select>
+          </div>
+          <div class="mb-5">
+            <h1 id="total"></h1>
+          </div>
+          <div class="mb-5">
+              <div class="chart">
+                  <canvas id="predict-chart" role='img'></canvas>
+              </div>
+          </div>
+          <div class="mb-5">
+            <table class="table table-hover table-responsive-md">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">S.NO.</th>
+                  <th scope="col">STATES</th>
+                  <th id="cases-header" scope="col">CASES</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <template id="rows">
+                  <tr>
+                    <th id="sno" scope="row"></th>
+                    <td id="states"></td>
+                    <td id="cases"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+          <div class="container mt-5">
+            <h1 class="mb-3">About Project</h1>
+            <p>Web App is dedicated to status of Corona Virus spread in India. It fetches data from an API located at <a href="https://coronastatusindia.herokuapp.com/">https://coronastatusindia.herokuapp.com/</a> which fetches data by scraping website of Ministry of Health and Family Welfare (https://www.mohfw.gov.in) </p>
+            <p>This project is for educational purpose as well as to show stats of corona virus in India.</p>
+            <small class="text-muted"><a href="">Refresh Data</a></small>
+          </div>
+      </div>
+    </main>
+    <footer class="bg-dark">
+      <a href="http://tarunbisht.com">Tarun</a>, © 2020 All rights reserved.
+    </footer>
+    <!-- bootstrap js -->
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
