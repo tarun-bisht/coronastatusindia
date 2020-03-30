@@ -167,7 +167,8 @@ function refresh()
     {
         if(response)
         {
-            load_from_api(get_selection_value("tc"));
+            clear_table();
+            load_from_api(get_selection_value(document.getElementById("get_selection").value));
         }
     });
 }
