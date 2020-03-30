@@ -39,12 +39,15 @@ a:hover
 {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
 }
 .predict-text
 {
     font-size: 25px;
     margin-top: 2rem;
+}
+#predict-chart
+{
+  height: 50vh;
 }
 footer
 {
@@ -67,4 +70,11 @@ footer a:hover
 {
   color: #fff;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 600px) 
+{
+  #predict-chart
+  {
+    height: 100vh;
+  }
 }

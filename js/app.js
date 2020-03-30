@@ -26,7 +26,7 @@ window.onload=function()
 function create_graph()
 {
     var dChart = new Chart(chart, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
             labels:states,
             datasets:
@@ -70,17 +70,11 @@ function create_graph()
             ]
         },
         options:{
-
-            responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio:true,
             legend:
             {
-                labels:
-                {
-                    fontColor:'#111'
-                },
-                position:'right',
-            }
+                display:false
+            },
         }
     });
     return dChart;
@@ -157,7 +151,11 @@ function load_from_api(value)
 }
 function clear_table()
 {
-    document.getElementById("table-body").innerHTML="";
+    let container=document.getElementById("table-body");
+    let rows=container.querySelectorAll("tr");
+    rows.forEach(function(row){
+        container.removeChild(row);
+    });
 }
 
 
@@ -168,6 +166,7 @@ function refresh()
         if(response)
         {
             clear_table();
+            removeDataFromGraph(graph);
             load_from_api(get_selection_value(document.getElementById("get_selection").value));
         }
     });
